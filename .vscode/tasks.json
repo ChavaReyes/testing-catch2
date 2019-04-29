@@ -1,0 +1,37 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Testing-Catch2",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=gnu++11", "-g", "main.cpp",
+                "010-TestCase.cpp",
+                "-o", "Testing-Catch2.exe"
+            ]
+        },
+        {
+            "label": "Make Testing-Catch2",
+            "type": "shell",
+            "command": "mingw32-make",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Update make files Testing-Catch2",
+            "type": "shell",
+            "command": "cmake .. -G \"MinGW Makefiles\"",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            }
+        }
+    ]
+}
