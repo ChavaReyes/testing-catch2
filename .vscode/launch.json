@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/Testing-Catch2.exe",
             "args": [],
-            "stopAtEntry": false,
+            "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,

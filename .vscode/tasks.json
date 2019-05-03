@@ -4,17 +4,16 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build Testing-Catch2",
+            "label": "Update make files Testing-Catch2",
             "type": "shell",
-            "command": "g++",
-            "args": [
-                "-std=gnu++11", "-g", "main.cpp",
-                "010-TestCase.cpp",
-                "-o", "Testing-Catch2.exe"
-            ]
+            "command": "cmake .. -G \"MinGW Makefiles\"",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "problemMatcher": []
         },
         {
-            "label": "Make Testing-Catch2",
+            "label": "Make All",
             "type": "shell",
             "command": "mingw32-make",
             "options": {
@@ -23,15 +22,47 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": []
         },
         {
-            "label": "Update make files Testing-Catch2",
+            "label": "Make Test1",
             "type": "shell",
-            "command": "cmake .. -G \"MinGW Makefiles\"",
+            "command": "mingw32-make Test1",
             "options": {
                 "cwd": "${workspaceFolder}/build"
-            }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Make Test2",
+            "type": "shell",
+            "command": "mingw32-make Test2",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Make Test3",
+            "type": "shell",
+            "command": "mingw32-make Test3",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
         }
     ]
 }
